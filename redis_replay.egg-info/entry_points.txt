@@ -1,0 +1,3 @@
+[console_scripts]
+redis-provision = bench.provision:main
+
