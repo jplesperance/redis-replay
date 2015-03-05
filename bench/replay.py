@@ -2,16 +2,21 @@
 
 import argparse
 import redis
-import
 
 
 def replay_command(server, line):
     parts = line.split()
     cmd = parts[0].lower()
+
     if cmd == 'setex':
-        server.setex(parts[1], parts[3], parts[2])
+        if len(parts) > 3:
+            server.setex(parts[1], parts[3], parts[2])
     elif cmd == 'del':
-        server.delete(parts[1])
+        if len(parts) > 1:
+            server.delete(parts[1])
+    elif cmd == 'get':
+        if len(parts) > 1:
+            server.delete(parts[1])
 
 
 def main():
