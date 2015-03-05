@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.6b'
+version = '1.0.0'
 install_requires = [
 	'argparse',
 ]
@@ -16,7 +16,7 @@ setup(name='redis-replay',
       keywords='',
       author='Jesse Lesperance',
       author_email='jesse@jplesperance.me',
-      url='http://gitlab.addsrv.com/jlesperance/redis-sa',
+      url='http://github.com/eternalprojects/redis-replay',
       license='MIT',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
@@ -24,6 +24,7 @@ setup(name='redis-replay',
       entry_points={
           'console_scripts': [
               'redis-provision = bench.provision:main',
+              'redis-replay = bench.replay:main',
           ],
       },
       )
